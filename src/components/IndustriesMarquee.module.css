@@ -1,0 +1,80 @@
+.section {
+  padding: var(--spacing-16) 0;
+  background-color: var(--c-off-white);
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  overflow: hidden;
+}
+
+.label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c-muted-text);
+  margin-bottom: var(--spacing-8);
+}
+
+.marqueeContainer {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+}
+
+.marquee {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  min-width: 100%;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - var(--spacing-4)));
+  }
+}
+
+.industryItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--c-primary-ink);
+  white-space: nowrap;
+  background-color: var(--c-pure-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--c-primary-blue);
+}

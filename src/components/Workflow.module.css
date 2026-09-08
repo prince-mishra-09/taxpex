@@ -1,0 +1,180 @@
+.section {
+  padding: var(--spacing-24) 0;
+  background-color: var(--c-deep-navy);
+  color: var(--c-pure-white);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-4);
+  color: var(--c-pure-white);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  color: var(--c-muted-text);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-12);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .workflowGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-6);
+  }
+}
+
+.stepCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  transform: scale(0.9);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activeCard {
+  transform: scale(1);
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--c-deep-navy); /* Solid background hides the line behind it */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+  position: relative;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.5s ease;
+  z-index: 2; /* Ensures it sits above the background line */
+}
+
+.activeCard .iconWrapper {
+  background-color: #17243B; /* Solid dark blue instead of transparent rgba */
+  border-color: var(--c-primary-blue);
+  color: var(--c-primary-blue);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.currentCard .iconWrapper {
+  transform: scale(1.1);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--c-muted-text);
+  color: var(--c-pure-white);
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  transition: all 0.5s ease;
+}
+
+.activeCard .stepNumber {
+  background-color: var(--c-primary-blue);
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-3);
+  color: var(--c-pure-white);
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+}
+
+.activeCard .stepTitle {
+  opacity: 1;
+}
+
+.stepDesc {
+  color: var(--c-muted-text);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+}
+
+.activeCard .stepDesc {
+  opacity: 1;
+}
+
+/* Continuous Line */
+.lineTrack {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .lineTrack {
+    display: block;
+    position: absolute;
+    top: 40px; /* middle of the 80px icon wrapper */
+    left: 12.5%; /* center of first card */
+    width: 75%; /* distance from first card center to last card center */
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1; /* Below the iconWrapper */
+  }
+  
+  .lineProgress {
+    height: 100%;
+    background-color: var(--c-primary-blue);
+    width: 0%;
+    box-shadow: 0 0 10px var(--c-primary-blue);
+    position: relative;
+    /* Transition removed because width is managed smoothly by requestAnimationFrame in React */
+  }
+
+  .lineProgress::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--c-pure-white);
+    border-radius: 50%;
+    box-shadow: 0 0 15px 4px var(--c-primary-blue), 0 0 8px var(--c-pure-white);
+    z-index: 3;
+    opacity: 0;
+    animation: fadeInOut 4s infinite;
+  }
+
+  @keyframes fadeInOut {
+    0%, 5% { opacity: 0; }
+    10%, 95% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}

@@ -1,0 +1,114 @@
+.illustrationWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-pure-white);
+}
+
+.svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  overflow: visible;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes typeCode {
+  0% { width: 0; opacity: 0; }
+  20%, 100% { width: var(--w); opacity: 1; }
+}
+
+@keyframes popOut {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-30px) scale(1.2); opacity: 0; }
+}
+
+/* Founder / Rocket */
+.float {
+  animation: float 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.pulse {
+  animation: pulse 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Freelancer / Laptop */
+.laptopScreen {
+  animation: float 4s ease-in-out infinite;
+  transform-origin: center;
+}
+.codeLine1 { --w: 40px; animation: typeCode 4s steps(4) infinite; transform-origin: left; }
+.codeLine2 { --w: 60px; animation: typeCode 4s steps(6) infinite 0.5s; transform-origin: left; }
+.codeLine3 { --w: 30px; animation: typeCode 4s steps(3) infinite 1s; transform-origin: left; }
+.floatSlow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Creator / Video */
+.videoPlayer {
+  animation: float 4s ease-in-out infinite;
+}
+.playBtn {
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: 100px 100px;
+}
+.heart1 {
+  animation: floatHeart 3s ease-in infinite;
+}
+.heart2 {
+  animation: floatHeart 3.5s ease-in infinite 1.5s;
+}
+
+/* Ecommerce / Box */
+.boxBase {
+  animation: float 4s ease-in-out infinite;
+}
+.boxTop {
+  animation: float 4s ease-in-out infinite;
+}
+.receipt {
+  animation: popOut 2s ease-out infinite alternate;
+}
+
+/* SME / Store */
+.storeBase, .storeDoor, .storeWindow {
+  transform-origin: bottom;
+  animation: pulse 4s ease-in-out infinite;
+}
+.storeAwning {
+  animation: floatSlow 3s ease-in-out infinite;
+}
+.growArrow {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 2s forwards infinite alternate;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}

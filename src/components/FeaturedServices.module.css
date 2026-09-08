@@ -1,0 +1,215 @@
+.section {
+  padding: var(--spacing-24) 0;
+  background-color: var(--c-pure-white);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-3);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  color: var(--c-muted-text);
+  font-size: 1.125rem;
+  max-width: 500px;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-muted-text);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--c-border);
+  background-color: var(--c-off-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-primary-ink);
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--c-primary-blue);
+  background-color: var(--c-pure-white);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.categoryTabs {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-12);
+  padding-bottom: var(--spacing-2);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.categoryTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtn {
+  white-space: nowrap;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-full, 9999px);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--c-muted-text);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+  color: var(--c-primary-ink);
+  background-color: var(--c-off-white);
+}
+
+.tabBtn.activeTab {
+  background-color: var(--c-primary-ink);
+  color: var(--c-pure-white);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serviceCard {
+  background-color: var(--c-pure-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-6);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-out backwards;
+}
+
+.serviceCard:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-6);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background-color: var(--c-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-primary-blue);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover .iconWrapper {
+  background-color: var(--c-primary-blue);
+  color: var(--c-pure-white);
+}
+
+.priceTag {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--c-muted-text);
+  background-color: var(--c-off-white);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-3);
+  line-height: 1.4;
+}
+
+.cardDesc {
+  color: var(--c-muted-text);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-6);
+  flex-grow: 1;
+}
+
+.cardBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--c-primary-blue);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-top: auto;
+  transition: gap 0.2s ease;
+}
+
+.serviceCard:hover .cardBtn {
+  gap: var(--spacing-3);
+}
+
+.noResults {
+  text-align: center;
+  padding: var(--spacing-12) 0;
+  color: var(--c-muted-text);
+}
+
+.resetBtn {
+  margin-top: var(--spacing-4);
+  color: var(--c-primary-blue);
+  font-weight: 500;
+  text-decoration: underline;
+}

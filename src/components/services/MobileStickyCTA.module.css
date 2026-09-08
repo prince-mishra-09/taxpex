@@ -1,0 +1,51 @@
+.stickyContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--c-pure-white);
+  border-top: 1px solid var(--c-border);
+  padding: 12px 16px;
+  /* Safe area env variables for iOS/modern mobile browsers */
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0));
+  z-index: 50;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .stickyContainer {
+    display: none; /* Hide on desktop */
+  }
+}
+
+.ctaWrapper {
+  display: flex;
+  gap: var(--spacing-3);
+  height: 48px; /* High enough for touch targets but keeps total height 56-64px */
+}
+
+.whatsappBtn, .talkBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.whatsappBtn {
+  background-color: #E8F5E9; /* WhatsApp light green */
+  color: #1B5E20;
+  border: 1px solid #C8E6C9;
+}
+
+.talkBtn {
+  background-color: var(--c-primary-blue);
+  color: var(--c-pure-white);
+}

@@ -1,0 +1,35 @@
+.hero {
+  padding: var(--spacing-24) 0 var(--spacing-16);
+  background-color: var(--c-off-white);
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--c-primary-ink);
+  margin-bottom: var(--spacing-6);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+    letter-spacing: -0.02em;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--c-muted-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
