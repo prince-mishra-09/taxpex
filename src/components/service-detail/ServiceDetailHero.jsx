@@ -1,4 +1,5 @@
-import { CheckCircle2, MessageCircle, ShieldCheck } from 'lucide-react'
+import { CheckCircle2, MessageCircle, ShieldCheck, PlayCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import styles from './ServiceDetailHero.module.css'
 
 export default function ServiceDetailHero({ service }) {
@@ -14,12 +15,21 @@ export default function ServiceDetailHero({ service }) {
       <div className={styles.trustSignals}>
         <div className={styles.signal}>
           <CheckCircle2 size={16} className={styles.signalIcon} />
-          <span>CA-Verified Process</span>
+          <span>CA Verified</span>
         </div>
         <div className={styles.signal}>
           <ShieldCheck size={16} className={styles.signalIcon} />
           <span>Bank-Grade Security</span>
         </div>
+      </div>
+      
+      <div className={styles.ctaGroup}>
+        <Link to="/contact" className={styles.primaryBtn}>
+          Get Started
+        </Link>
+        <button className={styles.secondaryBtn}>
+          <PlayCircle size={20} /> Watch Video
+        </button>
       </div>
 
       {/* Enhanced What Happens Next */}

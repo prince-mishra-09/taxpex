@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, AlertCircle, Clock, TrendingUp, ShieldCheck } from 'lucide-react'
 import styles from './Hero.module.css'
 
@@ -148,12 +149,12 @@ export default function Hero() {
             </div>
 
             <div className={styles.ctaGroup}>
-              <button className={styles.primaryCta}>
+              <Link to="/contact" className={styles.primaryCta}>
                 {activeIntent.cta} <ArrowRight size={18} />
-              </button>
-              <button className={styles.secondaryCta}>
+              </Link>
+              <Link to="/contact" className={styles.secondaryCta}>
                 Talk to a CA
-              </button>
+              </Link>
             </div>
           </div>
         </div>

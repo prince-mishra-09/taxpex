@@ -9,6 +9,9 @@ import About from './pages/About'
 import TasProduct from './pages/TasProduct'
 import Tools from './pages/Tools'
 import ToolDetail from './pages/ToolDetail'
+import Contact from './pages/Contact'
+import Security from './pages/Security'
+import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -32,8 +35,9 @@ function App() {
           <Route path="tas" element={<TasProduct />} />
           <Route path="tools" element={<Tools />} />
           <Route path="tools/:slug" element={<ToolDetail />} />
-          <Route path="contact" element={<div className="container" style={{paddingTop: '8rem'}}><h1>Contact</h1></div>} />
-          <Route path="*" element={<div className="container" style={{paddingTop: '8rem'}}><h1>404 Not Found</h1></div>} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="security" element={<Security />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

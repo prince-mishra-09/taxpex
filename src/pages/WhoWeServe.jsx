@@ -57,8 +57,7 @@ export default function WhoWeServe() {
                 </button>
               ))}
               <select 
-                className={styles.mobileChip}
-                style={{ backgroundColor: 'var(--c-off-white)' }}
+                className={`${styles.mobileChip} ${styles.mobileSelect}`}
                 value={SECONDARY_AUDIENCES.some(a => a.id === activeId) ? activeId : ""}
                 onChange={(e) => {
                   if(e.target.value) setActiveId(e.target.value)
