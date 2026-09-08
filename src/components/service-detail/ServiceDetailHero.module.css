@@ -1,0 +1,320 @@
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--spacing-12);
+}
+
+.categoryBadge {
+  align-self: flex-start;
+  background-color: var(--theme-accent-light);
+  color: var(--theme-accent);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-6);
+}
+
+.headline {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--theme-text);
+  margin-bottom: var(--spacing-4);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 3.5rem;
+  }
+}
+
+.subheadline {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--c-muted-text);
+  margin-bottom: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .subheadline {
+    font-size: 1.25rem;
+  }
+}
+
+.trustSignals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.signal {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 0.9375rem;
+  color: var(--c-primary-ink);
+  font-weight: 500;
+}
+
+.signalIcon {
+  color: var(--theme-accent);
+}
+
+.nextStepContainer {
+  margin-top: var(--spacing-6);
+  padding: var(--spacing-4) 0;
+  border-top: 1px dashed var(--c-border);
+  border-bottom: 1px dashed var(--c-border);
+}
+
+.nextStepTitle {
+  display: block;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--c-muted-text);
+  margin-bottom: var(--spacing-3);
+}
+
+.nextStepFlow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.stepPill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background-color: var(--c-off-white);
+  border: 1px solid var(--c-border);
+  padding: 4px 10px 4px 4px;
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--c-primary-ink);
+  white-space: nowrap;
+}
+
+.stepNumber {
+  background-color: var(--c-primary-blue);
+  color: var(--c-pure-white);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.stepArrow {
+  color: var(--c-muted-text);
+  font-size: 1rem;
+  margin: 0 var(--spacing-1);
+}
+
+.nextStep {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--c-border);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: var(--c-primary-ink);
+  margin-bottom: var(--spacing-8);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+@media (min-width: 768px) {
+  .mobileActions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobileActions {
+    display: none; /* Hide on desktop, action card takes over */
+  }
+}
+
+.primaryBtn {
+  background-color: var(--theme-accent);
+  color: var(--c-pure-white);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.primaryBtn:hover {
+  opacity: 0.9;
+}
+
+.waBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #C8E6C9;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.waBtn:hover {
+  background-color: #C8E6C9;
+}
+
+/* Right Side: Premium Action Card */
+.cardColumn {
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .cardColumn {
+    position: sticky;
+    top: 120px; /* Increased from 100px to avoid navbar */
+  }
+}
+
+.actionCard {
+  background-color: var(--c-pure-white);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--c-off-white);
+  background-color: rgba(255,255,255,0.8);
+}
+
+.priceLabel {
+  font-size: 0.875rem;
+  color: var(--c-muted-text);
+  font-weight: 500;
+  display: block;
+  margin-bottom: var(--spacing-1);
+}
+
+.priceValue {
+  font-size: 2.25rem;
+  color: var(--c-primary-ink);
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+  font-feature-settings: "tnum";
+}
+
+.govFee {
+  font-size: 0.8125rem;
+  color: var(--c-muted-text);
+  background-color: var(--c-off-white);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cardBody {
+  padding: var(--spacing-6);
+}
+
+.turnaround {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--c-primary-ink);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-6);
+  border-bottom: 1px dashed var(--c-border);
+}
+
+.inclusions h4 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--c-muted-text);
+  margin-bottom: var(--spacing-3);
+}
+
+.inclusions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.inclusions li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.9375rem;
+  color: var(--c-primary-ink);
+}
+
+.inclusions li::before {
+  content: '✓';
+  color: var(--theme-accent);
+  margin-right: var(--spacing-2);
+  font-weight: bold;
+}
+
+.cardFooter {
+  padding: var(--spacing-6);
+  background-color: var(--c-off-white);
+}
+
+.cardCta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  background-color: var(--theme-accent);
+  color: var(--c-pure-white);
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-bottom: var(--spacing-3);
+}
+
+.cardCta:hover {
+  opacity: 0.9;
+}
+
+.secureText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  font-size: 0.8125rem;
+  color: var(--c-muted-text);
+}

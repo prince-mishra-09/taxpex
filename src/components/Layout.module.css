@@ -255,7 +255,7 @@
 }
 
 .ctaButton {
-  background-color: var(--c-primary-ink);
+  background-color: var(--c-primary-blue);
   color: var(--c-pure-white);
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius-lg);
@@ -265,7 +265,7 @@
 }
 
 .ctaButton:hover {
-  background-color: var(--c-deep-navy);
+  background-color: var(--c-electric-blue);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }

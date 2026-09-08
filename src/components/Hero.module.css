@@ -1,5 +1,5 @@
 .hero {
-  padding-top: var(--spacing-32);
+  padding-top: 100px;
   padding-bottom: var(--spacing-16);
   background-color: var(--c-off-white);
   min-height: 100vh;

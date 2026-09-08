@@ -1,11 +1,15 @@
-import { Outlet, Link } from 'react-router-dom'
-import { Menu, X, ChevronDown, ArrowRight, Briefcase, FileText, Calculator, BadgeCheck } from 'lucide-react'
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
+import { Menu, X, ChevronDown, ArrowRight, Briefcase, FileText, Calculator, BadgeCheck, ArrowLeft } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import styles from './Layout.module.css'
 
 export default function Layout() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+  
+  const isSubPage = pathname.split('/').length > 2 && pathname !== '/'
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -17,9 +21,22 @@ export default function Layout() {
     <div className={styles.wrapper}>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
         <div className={`container ${styles.headerContainer}`}>
-          <Link to="/" className={styles.logo}>
-            TAXPEX<span className={styles.dot}>.</span>
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {isSubPage && (
+              <button 
+                onClick={() => navigate(-1)} 
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', display: 'flex', alignItems: 'center', color: 'var(--c-primary-ink)', borderRadius: '50%', transition: 'background 0.2s' }} 
+                aria-label="Go back"
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.05)'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              >
+                <ArrowLeft size={20} strokeWidth={2.5} />
+              </button>
+            )}
+            <Link to="/" className={styles.logo}>
+              TAXPEX<span className={styles.dot}>.</span>
+            </Link>
+          </div>
           
           <nav className={styles.desktopNav}>
             <div className={styles.navItem}>
@@ -102,6 +119,7 @@ export default function Layout() {
                 </div>
               </div>
             </div>
+            <Link to="/who-we-serve" className={styles.navLink}>Who We Serve</Link>
             <Link to="/tas" className={styles.navLink}>TAS</Link>
             <Link to="/tools" className={styles.navLink}>Tools</Link>
             <Link to="/insights" className={styles.navLink}>Insights</Link>
@@ -121,6 +139,7 @@ export default function Layout() {
           <div className={styles.mobileMenu}>
             <nav className={styles.mobileNav}>
               <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+              <Link to="/who-we-serve" onClick={() => setMobileMenuOpen(false)}>Who We Serve</Link>
               <Link to="/tas" onClick={() => setMobileMenuOpen(false)}>TAS Product</Link>
               <Link to="/tools" onClick={() => setMobileMenuOpen(false)}>Tools</Link>
               <Link to="/insights" onClick={() => setMobileMenuOpen(false)}>Insights</Link>
@@ -161,6 +180,7 @@ export default function Layout() {
           <div className={styles.footerCol}>
             <h4>Company</h4>
             <Link to="/about">About</Link>
+            <Link to="/who-we-serve">Who We Serve</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/careers">Careers</Link>
             <Link to="/privacy">Privacy Policy</Link>

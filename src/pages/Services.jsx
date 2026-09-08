@@ -2,7 +2,6 @@ import { useEffect, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SERVICES } from '../data/servicesData'
 import ServiceDiscoveryHero from '../components/services/ServiceDiscoveryHero'
-import GuidedRecommendation from '../components/services/GuidedRecommendation'
 import ServiceFilterBar from '../components/services/ServiceFilterBar'
 import ServiceGrid from '../components/services/ServiceGrid'
 import MobileStickyCTA from '../components/services/MobileStickyCTA'
@@ -19,7 +18,7 @@ export default function Services() {
   // Filter Logic
   const filteredServices = useMemo(() => {
     return SERVICES.filter(service => {
-      // Search Text (Matches name, outcome, or aliases)
+      // Search Text
       if (currentQuery) {
         const query = currentQuery.toLowerCase()
         const matchesName = service.name.toLowerCase().includes(query)
@@ -51,21 +50,17 @@ export default function Services() {
 
       return true
     }).sort((a, b) => {
-      // Dynamic reordering: if an audience is selected, push services matching that audience to top
-      // Wait, the filter already removes non-matching ones. 
-      // Let's sort featured first.
       if (a.featured === b.featured) return 0
       return a.featured ? -1 : 1
     })
   }, [currentQuery, currentCategory, currentAudience, currentPrice, currentUrgency])
 
   const handleCategorySelect = (category) => {
-    // Smooth scroll to the category section if it exists
     if (category !== 'All') {
       const elementId = `category-${category.toLowerCase().replace(/\s+/g, '-')}`
       const element = document.getElementById(elementId)
       if (element) {
-        const y = element.getBoundingClientRect().top + window.scrollY - 140; // 140px offset for sticky header
+        const y = element.getBoundingClientRect().top + window.scrollY - 140; 
         window.scrollTo({ top: y, behavior: 'smooth' })
       }
     }
@@ -73,8 +68,7 @@ export default function Services() {
 
   return (
     <>
-      <ServiceDiscoveryHero />
-      <GuidedRecommendation servicesData={SERVICES} />
+      <ServiceDiscoveryHero servicesData={SERVICES} />
       <ServiceFilterBar 
         searchParams={searchParams} 
         setSearchParams={setSearchParams} 

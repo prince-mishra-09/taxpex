@@ -1,0 +1,125 @@
+.cardWrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.actionCard {
+  background-color: var(--c-pure-white);
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--c-off-white);
+  background-color: rgba(255,255,255,0.8);
+}
+
+.priceLabel {
+  font-size: 0.875rem;
+  color: var(--c-muted-text);
+  font-weight: 500;
+  display: block;
+  margin-bottom: var(--spacing-1);
+}
+
+.priceValue {
+  font-size: 2.25rem;
+  color: var(--c-primary-ink);
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+  font-feature-settings: "tnum";
+}
+
+.govFee {
+  font-size: 0.8125rem;
+  color: var(--c-muted-text);
+  background-color: var(--c-off-white);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cardBody {
+  padding: var(--spacing-6);
+}
+
+.turnaround {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--c-primary-ink);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-6);
+  border-bottom: 1px dashed var(--c-border);
+}
+
+.inclusions h4 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--c-muted-text);
+  margin-bottom: var(--spacing-3);
+}
+
+.inclusions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.inclusions li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.9375rem;
+  color: var(--c-primary-ink);
+}
+
+.inclusions li::before {
+  content: '✓';
+  color: var(--theme-accent);
+  margin-right: var(--spacing-2);
+  font-weight: bold;
+}
+
+.cardFooter {
+  padding: var(--spacing-6);
+  background-color: var(--c-off-white);
+}
+
+.cardCta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  background-color: var(--theme-accent);
+  color: var(--c-pure-white);
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-bottom: var(--spacing-3);
+}
+
+.cardCta:hover {
+  opacity: 0.9;
+}
+
+.secureText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  font-size: 0.8125rem;
+  color: var(--c-muted-text);
+}
