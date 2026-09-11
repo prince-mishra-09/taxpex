@@ -26,7 +26,12 @@ export default function GstCalculator({ toolData }) {
   }, [result.totalAmount])
 
   const formatCurrency = (val) => {
-    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(val || 0)
+    if (val === undefined || val === null || isNaN(val) || !isFinite(val)) return '₹0.00'
+    try {
+      return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 }).format(val)
+    } catch (e) {
+      return `₹${val}`
+    }
   }
 
   // --- Input UI ---
@@ -62,14 +67,16 @@ export default function GstCalculator({ toolData }) {
             data-active={type === 'intra'} 
             onClick={() => setType('intra')}
           >
-            Intra-state (Same State)
+            <span className={styles.desktopText}>Intra-state (Same State)</span>
+            <span className={styles.mobileText}>Intra-state (Same)</span>
           </button>
           <button 
             className={styles.segmentBtn} 
             data-active={type === 'inter'} 
             onClick={() => setType('inter')}
           >
-            Inter-state (Other State)
+            <span className={styles.desktopText}>Inter-state (Other State)</span>
+            <span className={styles.mobileText}>Inter-state (Other)</span>
           </button>
         </div>
       </div>
@@ -85,7 +92,12 @@ export default function GstCalculator({ toolData }) {
             type="number"
             className={`${styles.amountInput} ${result.isValid === false && amountStr !== '' ? styles.error : ''}`}
             value={amountStr}
-            onChange={(e) => setAmountStr(e.target.value)}
+            onChange={(e) => {
+              const val = e.target.value
+              if (val.length <= 14) {
+                setAmountStr(val)
+              }
+            }}
             placeholder="0.00"
           />
         </div>
@@ -178,6 +190,7 @@ export default function GstCalculator({ toolData }) {
       results={results}
       serviceRecommendation={toolData.recommendService}
       disclaimer="This calculator provides estimates for informational purposes only. Exact tax liabilities should be confirmed with your Chartered Accountant."
+      currentToolId={toolData.id}
     />
   )
 }

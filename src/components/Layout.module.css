@@ -274,6 +274,27 @@
   box-shadow: var(--shadow-md);
 }
 
+@media (max-width: 768px) {
+  .ctaButton {
+    display: none;
+  }
+}
+
+.headerToolTitle {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--c-primary-ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .headerToolTitle {
+    font-size: 1.1rem;
+  }
+}
+
 .mobileMenuBtn {
   display: flex;
   align-items: center;
@@ -313,7 +334,7 @@
 .mobileNav {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
+  gap: var(--spacing-3);
 }
 
 .mobileNav a {
@@ -322,6 +343,22 @@
   color: var(--c-primary-ink);
   padding: var(--spacing-2) 0;
   border-bottom: 1px solid var(--c-off-white);
+}
+
+.mobileCtaBtn {
+  display: block;
+  background-color: var(--c-primary-blue) !important;
+  color: var(--c-pure-white) !important;
+  text-align: center;
+  padding: 12px !important;
+  border-radius: var(--radius-lg) !important;
+  font-weight: 600;
+  margin-top: var(--spacing-2);
+  border-bottom: none !important;
+}
+
+.mobileCtaBtn:hover {
+  background-color: var(--c-electric-blue) !important;
 }
 
 /* Footer */

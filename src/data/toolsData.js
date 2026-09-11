@@ -36,7 +36,7 @@ export const toolsData = [
     timeToResult: "3 mins",
     cta: "Estimate",
     tags: ["itr", "salary", "deductions", "regime"],
-    status: "coming-soon",
+    status: "live",
     isPopular: true,
     recommendService: {
       name: "ITR Filing & Tax Planning",
@@ -52,7 +52,7 @@ export const toolsData = [
     timeToResult: "< 1 min",
     cta: "Calculate",
     tags: ["home loan", "car loan", "personal loan", "interest"],
-    status: "coming-soon",
+    status: "live",
     isPopular: true,
     recommendService: {
       name: "Project Finance Advisory",
@@ -68,7 +68,7 @@ export const toolsData = [
     timeToResult: "< 1 min",
     cta: "Estimate",
     tags: ["mutual funds", "returns", "cagr", "future value"],
-    status: "coming-soon",
+    status: "live",
     isPopular: true,
     recommendService: {
       name: "Wealth Advisory",
@@ -84,7 +84,7 @@ export const toolsData = [
     timeToResult: "2 mins",
     cta: "Calculate",
     tags: ["ctc", "take home", "pf", "epf", "net salary"],
-    status: "coming-soon",
+    status: "live",
     isPopular: false,
     recommendService: {
       name: "Individual Tax Planning",
@@ -100,7 +100,7 @@ export const toolsData = [
     timeToResult: "1 min",
     cta: "Calculate",
     tags: ["rent", "house rent allowance", "tax deduction"],
-    status: "coming-soon",
+    status: "live",
     isPopular: false,
     recommendService: {
       name: "Tax Planning Services",
@@ -116,7 +116,7 @@ export const toolsData = [
     timeToResult: "< 1 min",
     cta: "Find",
     tags: ["product code", "service code", "gst rate"],
-    status: "coming-soon",
+    status: "live",
     isPopular: true,
     recommendService: {
       name: "GST Advisory",
@@ -132,7 +132,7 @@ export const toolsData = [
     timeToResult: "< 1 min",
     cta: "Compare",
     tags: ["growth", "annual return", "portfolio"],
-    status: "coming-soon",
+    status: "live",
     isPopular: false,
     recommendService: {
       name: "Business Valuation",
@@ -148,7 +148,7 @@ export const toolsData = [
     timeToResult: "5 mins",
     cta: "Estimate",
     tags: ["equity", "funding", "dcf", "vc"],
-    status: "coming-soon",
+    status: "live",
     isPopular: false,
     recommendService: {
       name: "Virtual CFO & Advisory",

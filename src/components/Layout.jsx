@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X, ChevronDown, ArrowRight, Briefcase, FileText, Calculator, BadgeCheck, ArrowLeft } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { toolsData } from '../data/toolsData'
 import styles from './Layout.module.css'
 
 export default function Layout() {
@@ -10,6 +11,8 @@ export default function Layout() {
   const navigate = useNavigate()
   
   const isSubPage = pathname.split('/').length > 2 && pathname !== '/'
+  const toolSlug = pathname.startsWith('/tools/') ? pathname.split('/')[2] : null
+  const currentTool = toolSlug ? toolsData.find(t => t.slug === toolSlug) : null
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -21,7 +24,7 @@ export default function Layout() {
     <div className={styles.wrapper}>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
         <div className={`container ${styles.headerContainer}`}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {isSubPage && (
               <button 
                 onClick={() => navigate(-1)} 
@@ -34,7 +37,11 @@ export default function Layout() {
               </button>
             )}
             <Link to="/" className={styles.logo}>
-              TAXPEX<span className={styles.dot}>.</span>
+              {currentTool ? (
+                <span className={styles.headerToolTitle}>{currentTool.name}</span>
+              ) : (
+                <>TAXPEX<span className={styles.dot}>.</span></>
+              )}
             </Link>
           </div>
           
@@ -44,7 +51,7 @@ export default function Layout() {
               
               <div className={styles.megaMenu}>
                 <div className={styles.megaMenuInner}>
-                  {/* Left 25% - Most Used (Using 25% because 20% is very narrow for text) */}
+                  {/* Left 25% - Most Used */}
                   <div className={styles.megaMenuSidebar}>
                     <h4 className={styles.megaMenuTitle}>Most Used</h4>
                     <ul className={styles.megaMenuList}>
@@ -145,6 +152,7 @@ export default function Layout() {
               <Link to="/insights" onClick={() => setMobileMenuOpen(false)}>Insights</Link>
               <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
               <Link to="/login" onClick={() => setMobileMenuOpen(false)}>Log in</Link>
+              <Link to="/contact" className={styles.mobileCtaBtn} onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
             </nav>
           </div>
         )}

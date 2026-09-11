@@ -2,7 +2,7 @@
 .calcWrapper {
   min-height: 100vh;
   background-color: var(--c-off-white);
-  padding: 100px 0 80px;
+  padding: 80px 0 60px;
   font-family: 'Inter', sans-serif;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .calcHeader {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .calcTitle {
@@ -32,14 +32,22 @@
 .calcGrid {
   display: grid;
   grid-template-columns: 1fr 400px;
-  gap: 40px;
+  gap: 36px;
   align-items: start;
+}
+
+.desktopText {
+  display: inline;
+}
+
+.mobileText {
+  display: none;
 }
 
 @media (max-width: 900px) {
   .calcGrid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 }
 
@@ -48,12 +56,12 @@
   background: var(--c-pure-white);
   border: 1px solid var(--c-border);
   border-radius: 16px;
-  padding: 32px;
+  padding: 28px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .inputGroup {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .inputGroup:last-child {
@@ -64,7 +72,7 @@
   display: block;
   font-weight: 600;
   color: var(--c-primary-ink);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 0.95rem;
 }
 
@@ -80,7 +88,7 @@
 
 .segmentBtn {
   flex: 1;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 8px;
   border: none;
   background: transparent;
@@ -104,8 +112,8 @@
 
 .currencySymbol {
   position: absolute;
-  left: 20px;
-  font-size: 1.5rem;
+  left: 18px;
+  font-size: 1.4rem;
   color: var(--c-muted-text);
   font-weight: 500;
   pointer-events: none;
@@ -113,8 +121,8 @@
 
 .amountInput {
   width: 100%;
-  padding: 20px 20px 20px 48px;
-  font-size: 1.5rem;
+  padding: 14px 16px 14px 44px;
+  font-size: 1.35rem;
   font-family: inherit;
   font-weight: 600;
   border: 2px solid var(--c-border);
@@ -134,7 +142,7 @@
 .errorText {
   color: #ef4444;
   font-size: 0.85rem;
-  margin-top: 8px;
+  margin-top: 6px;
   font-weight: 500;
 }
 
@@ -150,125 +158,19 @@
 .chipGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .rateChip {
-  padding: 14px 0;
+  padding: 12px 0;
   border-radius: 12px;
   border: 2px solid var(--c-border);
   background: var(--c-pure-white);
   color: var(--c-primary-ink);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.2s;
-}
-
-.rateChip:hover {
-  border-color: #cbd5e1;
-}
-
-.rateChip[data-active="true"] {
-  border-color: var(--c-primary-blue);
-  background: rgba(37, 99, 235, 0.05);
-  color: var(--c-primary-blue);
-}
-
-/* --- Mobile Specific Ultra-Compact Overrides --- */
-@media (max-width: 480px) {
-  .calcWrapper {
-    padding: 16px 0 40px;
-  }
-  
-  .calcHeader {
-    margin-bottom: 16px;
-    text-align: center;
-  }
-
-  .calcTitle {
-    font-size: 1.5rem;
-    margin-bottom: 4px;
-  }
-
-  .calcBenefit {
-    display: none; /* Hide on mobile to save vertical space */
-  }
-
-  .calcGrid {
-    gap: 0;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--c-border);
-  }
-
-  .inputPanel {
-    padding: 20px 16px;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-  }
-
-  .inputGroup {
-    margin-bottom: 16px;
-  }
-
-  .inputLabel {
-    margin-bottom: 6px;
-    font-size: 0.8rem;
-  }
-
-  .segmentedControl {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .segmentBtn {
-    padding: 8px;
-    font-size: 0.8rem;
-  }
-
-  .amountInput {
-    padding: 12px 12px 12px 36px;
-    font-size: 1.25rem;
-  }
-
-  .currencySymbol {
-    left: 12px;
-    font-size: 1.25rem;
-  }
-
-  .rateChip {
-    padding: 8px 0;
-    font-size: 0.9rem;
-  }
-  
-  .chipGrid {
-    gap: 8px;
-  }
-
-  /* Result Panel Mobile */
-  .resultPanel {
-    padding: 20px 16px;
-    border-radius: 0;
-    box-shadow: none;
-    position: static;
-  }
-
-  .mainResult {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-  }
-
-  .breakdownList {
-    padding-top: 16px;
-    gap: 12px;
-  }
-
-  .formulaBox {
-    margin-top: 20px;
-  }
 }
 
 .rateChip:hover {
@@ -286,26 +188,30 @@
   background: var(--c-primary-ink);
   color: var(--c-pure-white);
   border-radius: 16px;
-  padding: 32px;
+  padding: 28px;
   position: sticky;
-  top: 100px; /* offset for nav */
+  top: 90px;
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .resultTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #94a3b8;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 500;
 }
 
 .mainResult {
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: 800;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   letter-spacing: -0.02em;
-  /* Premium number transition */
   transition: opacity 0.2s, transform 0.2s;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .mainResult.updating {
@@ -316,16 +222,23 @@
 .breakdownList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 24px;
+  padding-top: 20px;
 }
 
 .breakdownRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  gap: 12px;
+}
+
+.breakdownRow span:last-child {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .breakdownRow.highlight {
@@ -334,13 +247,13 @@
 }
 
 .formulaBox {
-  margin-top: 32px;
-  padding: 16px;
+  margin-top: 24px;
+  padding: 12px 14px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   color: #cbd5e1;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .formulaBox code {
@@ -351,73 +264,57 @@
   color: #fff;
 }
 
-/* Mobile Sticky Summary */
-@media (max-width: 900px) {
-  .resultPanel {
-    position: static;
-  }
-  
-  .mobileStickySummary {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--c-primary-ink);
-    color: var(--c-pure-white);
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-    z-index: 50;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-  
-  .mobileStickyLabel {
-    font-size: 0.85rem;
-    color: #94a3b8;
-  }
-  
-  .mobileStickyValue {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  .calcWrapper {
-    padding-bottom: 160px; /* Space for sticky summary */
-  }
-}
-
 /* Service Recommendation Module */
 .serviceUpsell {
-  margin-top: 64px;
-  background: rgba(37, 99, 235, 0.05);
-  border: 1px solid rgba(37, 99, 235, 0.1);
+  margin-top: 36px;
+  background: rgba(37, 99, 235, 0.04);
+  border: 1px solid rgba(37, 99, 235, 0.12);
   border-radius: 16px;
-  padding: 32px;
+  padding: 24px;
+}
+
+.upsellBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--c-primary-blue);
+  background: rgba(37, 99, 235, 0.08);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.upsellContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .upsellText h3 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: var(--c-primary-ink);
 }
 
 .upsellText p {
   color: var(--c-muted-text);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
 .upsellBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--c-primary-blue);
   color: var(--c-pure-white);
-  padding: 14px 28px;
+  padding: 10px 22px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
@@ -429,19 +326,384 @@
   background: var(--c-electric-blue);
 }
 
+/* Disclaimers */
+.disclaimer {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--c-muted-text);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Suggested Tools Section */
+.suggestedSection {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--c-border);
+}
+
+.suggestedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.suggestedTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c-primary-ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.suggestedSubtitle {
+  font-size: 0.9rem;
+  color: var(--c-muted-text);
+  margin: 0;
+}
+
+.viewAllToolsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--c-primary-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.suggestedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.suggestedCard {
+  background: var(--c-pure-white);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.suggestedCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+.suggestedCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.categoryBadge {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--c-primary-blue);
+  background: rgba(37, 99, 235, 0.08);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.comingSoonBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.suggestedCardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-primary-ink);
+  margin-bottom: 6px;
+}
+
+.suggestedCardDesc {
+  font-size: 0.825rem;
+  color: var(--c-muted-text);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.toolRelatedCta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--c-primary-ink);
+  background: var(--c-off-white);
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  border: 1px solid var(--c-border);
+}
+
+.ctaCheckIcon {
+  color: var(--c-primary-blue);
+  flex-shrink: 0;
+}
+
+.suggestedCardFooter {
+  margin-top: auto;
+}
+
+.toolCardBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--c-primary-blue);
+  color: var(--c-pure-white);
+  border-radius: 8px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.toolCardBtn:hover {
+  background: var(--c-electric-blue);
+}
+
+.btnDisabled {
+  background: var(--c-off-white);
+  color: var(--c-muted-text);
+  pointer-events: none;
+  border: 1px solid var(--c-border);
+}
+
+/* =========================================================
+   MOBILE COMPACT OPTIMIZATIONS (Single Screen View)
+   ========================================================= */
 @media (max-width: 768px) {
+  .calcWrapper {
+    padding: 60px 0 24px;
+  }
+
+  .calcContainer {
+    padding: 0 12px;
+  }
+
+  .calcHeader {
+    display: none; /* Header title is displayed in navbar */
+  }
+
+  .desktopText {
+    display: none;
+  }
+
+  .mobileText {
+    display: inline;
+  }
+
+  .calcGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Result Screen placed at TOP on mobile */
+  .resultCol {
+    order: 1;
+    width: 100%;
+  }
+
+  .inputCol {
+    order: 2;
+    width: 100%;
+  }
+
+  /* Result Panel Mobile Optimization */
+  .resultPanel {
+    padding: 14px 16px;
+    border-radius: 14px;
+    position: static;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .resultTitle {
+    font-size: 0.725rem;
+    margin-bottom: 2px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .mainResult {
+    font-size: clamp(1.15rem, 5.5vw, 1.85rem);
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1.1;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  .breakdownList {
+    padding-top: 8px;
+    gap: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .breakdownRow {
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  .breakdownRow span:last-child {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 65%;
+    text-align: right;
+  }
+
+  .formulaBox {
+    margin-top: 8px;
+    padding: 6px 10px;
+    font-size: 0.725rem;
+    line-height: 1.35;
+    border-radius: 6px;
+  }
+
+  /* Input Panel Mobile Optimization */
+  .inputPanel {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--c-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+
+  .inputGroup {
+    margin-bottom: 10px;
+  }
+
+  .inputGroup:last-child {
+    margin-bottom: 0;
+  }
+
+  .inputLabel {
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .segmentedControl {
+    padding: 3px;
+    border-radius: 8px;
+    gap: 3px;
+  }
+
+  .segmentBtn {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .amountInputWrapper {
+    height: 38px;
+  }
+
+  .amountInput {
+    padding: 6px 10px 6px 30px;
+    font-size: 1.15rem;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  .currencySymbol {
+    left: 10px;
+    font-size: 1.15rem;
+  }
+
+  .chipGrid {
+    gap: 6px;
+  }
+
+  .rateChip {
+    padding: 6px 0;
+    font-size: 0.825rem;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
   .serviceUpsell {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  .upsellContent {
     flex-direction: column;
     text-align: center;
-    gap: 24px;
+    gap: 8px;
+  }
+
+  .upsellText h3 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+
+  .upsellText p {
+    font-size: 0.78rem;
+  }
+
+  .upsellBtn {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    align-self: center;
+  }
+
+  .disclaimer {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  .suggestedSection {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+  
+  .suggestedHeader {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .suggestedTitle {
+    font-size: 1.1rem;
+  }
+
+  .suggestedSubtitle {
+    font-size: 0.78rem;
+  }
+
+  .suggestedGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .suggestedCard {
+    padding: 14px;
+  }
+
+  .mobileStickySummary {
+    display: none !important;
   }
 }
 
-/* Disclaimers */
-.disclaimer {
-  margin-top: 32px;
-  font-size: 0.8rem;
-  color: var(--c-muted-text);
-  line-height: 1.5;
-  text-align: center;
-}
+

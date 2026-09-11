@@ -1,7 +1,14 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
 import { toolsData } from '../data/toolsData'
 import GstCalculator from '../components/calculators/GstCalculator'
+import IncomeTaxCalculator from '../components/calculators/IncomeTaxCalculator'
+import EmiCalculator from '../components/calculators/EmiCalculator'
+import SipCalculator from '../components/calculators/SipCalculator'
+import InHandSalaryCalculator from '../components/calculators/InHandSalaryCalculator'
+import HraCalculator from '../components/calculators/HraCalculator'
+import HsnSacFinder from '../components/calculators/HsnSacFinder'
+import CagrCalculator from '../components/calculators/CagrCalculator'
+import StartupValuationCalculator from '../components/calculators/StartupValuationCalculator'
 
 export default function ToolDetail() {
   const { slug } = useParams()
@@ -14,7 +21,7 @@ export default function ToolDetail() {
   }
 
   return (
-    <div style={{ paddingTop: '80px', backgroundColor: 'var(--c-off-white)', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: 'var(--c-off-white)', minHeight: '100vh' }}>
       {tool.status === 'coming-soon' ? (
         <div className="container" style={{ textAlign: 'center', padding: '100px 0' }}>
           <h2>{tool.name}</h2>
@@ -27,7 +34,14 @@ export default function ToolDetail() {
         // Dynamic Calculator Router
         <>
           {tool.id === 'gst-calculator' && <GstCalculator toolData={tool} />}
-          {/* Add more calculators here as they are built */}
+          {tool.id === 'income-tax-calculator' && <IncomeTaxCalculator toolData={tool} />}
+          {tool.id === 'emi-calculator' && <EmiCalculator toolData={tool} />}
+          {tool.id === 'sip-calculator' && <SipCalculator toolData={tool} />}
+          {tool.id === 'in-hand-salary' && <InHandSalaryCalculator toolData={tool} />}
+          {tool.id === 'hra-calculator' && <HraCalculator toolData={tool} />}
+          {tool.id === 'hsn-sac-finder' && <HsnSacFinder toolData={tool} />}
+          {tool.id === 'cagr-calculator' && <CagrCalculator toolData={tool} />}
+          {tool.id === 'startup-valuation' && <StartupValuationCalculator toolData={tool} />}
         </>
       )}
     </div>
